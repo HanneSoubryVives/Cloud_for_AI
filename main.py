@@ -13,6 +13,9 @@ app = FastAPI()
 # Define endpoint
 @app.post("/predict")
 def predict(data: list[float]):
-    data = np.array(input.data).reshape(1, -1)
+    print(data)
+    data = np.array(data).reshape(1, -1)
+    print(data)
     prediction = model.predict(data)
-    return {"prediction": prediction}
+    print(prediction)
+    return {"prediction": prediction.tolist()}
