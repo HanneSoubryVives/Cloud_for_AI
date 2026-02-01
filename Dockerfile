@@ -8,6 +8,7 @@ COPY ./model.pkl /app/model.pkl
 # install other packages
 RUN pip install numpy
 RUN pip install tensorflow
+RUN pip install keras
 
 # The command to run the application
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
