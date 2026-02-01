@@ -12,7 +12,7 @@ app = FastAPI()
 
 # Define endpoint
 @app.post("/predict")
-def predict(data: List[float]):
+def predict(data: list[float]):
     data = np.array(input.data).reshape(1, -1)
     prediction = model.predict(data)
     return {"prediction": prediction}
